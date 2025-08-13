@@ -1,0 +1,39 @@
+{
+  "servers": {
+    "context7": {
+      "command": "npx",
+      "args": ["-y", "@upstash/context7-mcp@latest"]
+    },
+    "Jira / Confluence": {
+      "type": "stdio",
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "-e",
+        "CONFLUENCE_URL",
+        "-e",
+        "CONFLUENCE_USERNAME",
+        "-e",
+        "CONFLUENCE_API_TOKEN",
+        "-e",
+        "JIRA_URL",
+        "-e",
+        "JIRA_USERNAME",
+        "-e",
+        "JIRA_API_TOKEN",
+        "ghcr.io/sooperset/mcp-atlassian:latest"
+      ],
+      "env": {
+        "JIRA_USERNAME": "your-atlassian@email",
+        "JIRA_API_TOKEN": "YOUR_TOKEN_HERE",
+        "CONFLUENCE_URL": "https://company.atlassian.net/wiki",
+        "CONFLUENCE_USERNAME": "your-atlassian@email",
+        "CONFLUENCE_API_TOKEN": "YOUR_TOKEN_HERE",
+        "JIRA_URL": "https://company.atlassian.net"
+      },
+      "command": "docker"
+    }
+  },
+  "inputs": []
+}
